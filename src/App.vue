@@ -1,26 +1,59 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="top-bar">
+    <button @click="expandMenu()">Expand menu</button>
+  </div>
+  <menu-sidebar :isOpen="menuOpen" @click="collapseMenu()" />
+  <router-view />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script type="text/javascript">
+import MenuSidebar from "./components/MenuSidebar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+
+  data: () => ({
+    menuOpen: false,
+  }),
+
+  methods: {
+    expandMenu() {
+      this.menuOpen = true;
+    },
+    collapseMenu() {
+      this.menuOpen = false;
+    },
+  },
+
   components: {
-    HelloWorld
-  }
-}
+    MenuSidebar,
+  },
+};
 </script>
 
 <style>
+/*
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+*/
 </style>
