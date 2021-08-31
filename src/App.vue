@@ -8,6 +8,7 @@
 
 <script type="text/javascript">
 import MenuSidebar from "./components/MenuSidebar.vue";
+import { getIngredients } from "./api/api";
 
 export default {
   name: "App",
@@ -27,6 +28,10 @@ export default {
 
   components: {
     MenuSidebar,
+  },
+
+  created() {
+    getIngredients();
   },
 };
 </script>

@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
       <router-link to="/cleaning">Cleaning</router-link>
+      <router-link to="/connectedBeverages">Settings</router-link>
       <button>CLOSE MENU</button>
     </div>
   </transition>
@@ -23,6 +24,7 @@ export default {
 
 <style>
 #nav {
+  z-index: 1000;
   height: 100%;
   width: 100%;
   background-color: black;

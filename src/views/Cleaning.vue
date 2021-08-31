@@ -66,6 +66,10 @@ export default {
       if (this.cleanC) cleanArray.push("C");
       if (this.cleanD) cleanArray.push("D");
       startCleaning(cleanArray);
+      this.cleanA = false;
+      this.cleanB = false;
+      this.cleanC = false;
+      this.cleanD = false;
     },
   },
 };

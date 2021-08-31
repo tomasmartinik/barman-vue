@@ -11,9 +11,11 @@
         <div>
           {{ description }}
         </div>
-        <div class="choosedrink-btn mt-5">
-          <button>{{ price }} Kč</button>
-        </div>
+        <router-link :to="`/drink/${name}`">
+          <div v-if="showPrice" class="choosedrink-btn mt-5">
+            <button>{{ price }} Kč</button>
+          </div>
+        </router-link>
       </div>
     </div>
   </li>
@@ -33,6 +35,10 @@ export default {
     },
     imageSrc: {
       type: String,
+    },
+    showPrice: {
+      type: Boolean,
+      default: true,
     },
   },
 };
