@@ -1,4 +1,5 @@
 <template>
+
   <div class="cleaning">
     <h2 class="text-center pt-5" style="font-weight: 700">
       Vyber nádoby, které chceš vyčistit
@@ -48,6 +49,7 @@
 <script>
 import { startCleaning } from "../api/api";
 
+
 export default {
   name: "Cleaning",
 
@@ -57,7 +59,6 @@ export default {
     cleanC: false,
     cleanD: false,
   }),
-
   methods: {
     cleanContainers() {
       const cleanArray = [];
@@ -94,7 +95,7 @@ input[type="reset"] {
 }
 
 .selected {
-  border: solid red 2px;
+  background: black;
 }
 
 .kanystr:hover {

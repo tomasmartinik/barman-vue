@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <router-link to="/">zpátky na seznam drinků</router-link>
-    <DrinkCard
+
+
+ <div class="wrap vertical-center" style="
+         justify-content: left; max-height: 416px; margin-top: 100px;padding-left:50px
+         ">
+        <DrinkCard
       :key="drink.name"
       :name="drink.name"
       :price="drink.price"
@@ -9,11 +12,29 @@
       :imageSrc="drink.imageSrc"
       :showPrice="false"
     />
-    <div>
-      <div>ewiohgeiogfoiewhgoierhgioerw</div>
-      <button @click="payDrink()">Pay {{ drink.price }} Kč</button>
-    </div>
-  </div>
+         <div style="width: 50px;"></div>
+         <div class="card-sc mb-4" style="width: 70%; height: 100%;position: relative;">
+            <div class="card-body-sc pt-4 pb-3 w-100">
+               <h4>
+                  Objednávka
+               </h4>
+               <div class="mt-3">
+                  1x {{ drink.name }} {{ drink.price }} Kč
+               </div>
+               <h4 class="mt-5">
+                  K zaplacení
+               </h4>
+               <div class="mt-3">
+                 {{ drink.price }} Kč
+               </div>
+               <div class="paydrink-btn" style="position: absolute;bottom: 20px;">
+                  <button @click="payDrink()">ZAPLATIT {{ drink.price }} Kč</button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
 </template>
 
 <script>
@@ -45,6 +66,7 @@ export default {
   },
 };
 </script>
-
+ 
 <style>
+
 </style>

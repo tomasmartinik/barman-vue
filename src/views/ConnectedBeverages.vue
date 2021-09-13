@@ -22,9 +22,15 @@
       </div>
     </ul>
   </div>
+
+
+      <button @click="loadDrinks" class="btn-primary p-2">Načti drinky</button>
+
 </template>
 
 <script>
+import { getDrinks } from "@/api/api.js";
+
 export default {
   name: "ConnectedBeverages",
   data: () => ({
@@ -38,6 +44,16 @@ export default {
     },
     nonAlcoholic: [],
   }),
+  methods: {
+    async loadDrinks() {
+      try {
+        await getDrinks();
+      } catch (err) {
+        alert("Nedokázal jsem se připojit, koukni do konzole");
+        console.log(err.message);
+      }
+    },
+  }
 };
 </script>
 

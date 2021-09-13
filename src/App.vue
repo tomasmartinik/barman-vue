@@ -1,7 +1,17 @@
 <template>
-  <div class="top-bar">
-    <button @click="expandMenu()">Expand menu</button>
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background: black;padding-left: 20px">
+         <button @click="expandMenu()" class="navbar-brand" href="#">
+            <i id="hamburger" class="fa fa-bars" style="color: white;"></i>
+         </button>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+        
+      </nav>
+
+
+
+
   <menu-sidebar :isOpen="menuOpen" @click="collapseMenu()" />
   <router-view />
 </template>

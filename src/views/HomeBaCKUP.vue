@@ -1,15 +1,15 @@
 <template>
 
-  <div class="wrap vertical-center">
-  <carousel :items-to-show="5">
-    <slide v-for="drink in drinks" :key="drink.name">
-      <DrinkCard
-        
+ <carousel :items-to-show="3">
+    <slide v-for="slide in 1" :key="slide">
+     <DrinkCard
+        v-for="drink in drinks"
+        :key="drink.name"
         :name="drink.name"
         :price="drink.price"
         :description="drink.description"
         :imageSrc="drink.imageSrc"
-      /> {{ slide }}
+      />
     </slide>
 
     <template #addons>
@@ -17,12 +17,10 @@
       <pagination />
     </template>
   </carousel>
-  </div>
 
 
 
-
-
+  <div class="wrap vertical-center">
     <div class="glide drink-slider">
       <!-- <div class="home"> -->
       <DrinkCard
@@ -35,7 +33,7 @@
       />
       <!--  </div> -->
     </div>
-
+  </div>
 </template>
 
 <script>
@@ -43,17 +41,25 @@
 import DrinkCard from "@/components/DrinkCard.vue";
 import { globalDrinks } from "@/api/api.js";
 
-import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+
+// import style (>= Swiper 6.x)
+import 'swiper/swiper-bundle.css'
+
+// import style (<= Swiper 5.x)
+import 'swiper/css/swiper.css'
+
+
 
 export default {
   name: "Home",
   components: {
     DrinkCard,
-     Carousel,
-    Slide,
-    Pagination,
-    Navigation
+    Swiper,
+    SwiperSlide
+  },
+  directives: {
+    swiper: directive
   },
   data: () => ({
     drinks: globalDrinks,

@@ -1,11 +1,15 @@
 <template>
+
+
+
+
   <transition name="slide-fade">
     <div v-if="isOpen" id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link to="/cleaning">Cleaning</router-link>
-      <router-link to="/connectedBeverages">Settings</router-link>
-      <button>CLOSE MENU</button>
+      <router-link class="nav-item nav-link active p-4 mt-5" to="/">Home</router-link>
+      <router-link class="nav-item nav-link active p-4" to="/about">About</router-link>
+      <router-link class="nav-item nav-link active p-4" to="/cleaning">Cleaning</router-link>
+      <router-link class="nav-item nav-link active p-4" to="/connectedBeverages">Settings</router-link>
+      <button class="mt-5"><i class="fa fa-close" style="color: white; font-size:40px"></i></button>
     </div>
   </transition>
 </template>
@@ -13,6 +17,14 @@
 <script>
 export default {
   name: "MenuSidebar",
+  methods: {
+    expandMenu() {
+      this.menuOpen = true;
+    },
+    collapseMenu() {
+      this.menuOpen = false;
+    },
+  },
   props: {
     isOpen: {
       type: Boolean,
@@ -29,7 +41,7 @@ export default {
   width: 100%;
   background-color: black;
   color: rgb(146, 140, 140);
-  opacity: 0.8;
+  opacity: 0.9;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -42,6 +54,15 @@ export default {
   text-align: center;
   display: block;
 }
+
+.nav-link {font-size: 50px;
+color: white;
+font-weight: 700;
+}
+
+
+.nav-link:hover {color: grey;}
+
 
 .slide-fade-enter-active,
 .slide-fade-leave-active {

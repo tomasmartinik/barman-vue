@@ -1,8 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-
-    <button @click="loadDrinks">Načti drinky</button>
+    <button @click="loadDrinks" class="btn-primary p-2">Načti drinky</button>
   </div>
 </template>
 
@@ -15,10 +13,21 @@ export default {
       try {
         await getDrinks();
       } catch (err) {
-        alert("Nedokázal jsem se připojit, koiukni do konzole");
+        alert("Nedokázal jsem se připojit, koukni do konzole");
         console.log(err.message);
       }
     },
   },
 };
 </script>
+
+<style scoped="">
+  .about{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 50%;
+  }
+
+
+</style>

@@ -24,6 +24,8 @@
   overflow: ;
   width: 100%;
   text-align: left;
+  max-width: 300px;
+  min-width: 200px;
 }
 .card-header-sc img {
   width: 100%;
