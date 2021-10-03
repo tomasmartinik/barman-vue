@@ -1,48 +1,63 @@
 <template>
   <div>
-    <span>Seznam pripojených drinků</span>
-    <ul>
-      <div>
-        <button>{{ alcoholic.a1 ?? "Select..." }}</button>
+    <div>
+      <h2 class="text-center mt-4 mb-3">Alkoholické</h2>
+      <ul>
+        <div class="wrap">
+      <div class="row">
+        <button @click="openModal(i, true)" v-for="(drink, i) in alcoholic" :key="drink" class="col kanystr mx-3 text-center letterChoose">
+          
+            {{ drink ?? "Select..." }}  alko {{ i }}
+          
+        </button>
       </div>
-      <div>
-        <button>{{ alcoholic.a2 ?? "Select..." }}</button>
       </div>
-      <div>
-        <button>{{ alcoholic.a3 ?? "Select..." }}</button>
+      </ul>
+    </div>
+    <div>
+      <h2 class="text-center mt-5 mb-3">Nealkoholické</h2>
+      <ul>
+        <div class="wrap">
+        <div class="row">
+          <button @click="openModal(i, false)" v-for="(drink, i) in nonAlcoholic" :key="drink" class="col kanystr mx-3 text-center letterChoose">
+            {{ drink ?? "Select..." }}  nealko {{ i }}
+          </button>
       </div>
-      <div>
-        <button>{{ alcoholic.a4 ?? "Select..." }}</button>
       </div>
-      <div>
-        <button>{{ alcoholic.a5 ?? "Select..." }}</button>
-      </div>
-      <div>
-        <button>{{ alcoholic.a6 ?? "Select..." }}</button>
-      </div>
-    </ul>
+      </ul>
+    </div>
   </div>
+<div class="w-100 text-center">  
+  <button @click="loadDrinks" class="btn-secondary p-4 mt-2">Načti drinky</button>
+</div>
 
-
-      <button @click="loadDrinks" class="btn-primary p-2">Načti drinky</button>
-
+  <teleport to="body">
+    <drink-modal
+      :show="showModal"
+      :info="modalInfo"
+      @close="showModal = false"
+      @drinkSelected="onDrinkSelected($event)"
+    />
+  </teleport>
 </template>
 
 <script>
 import { getDrinks } from "@/api/api.js";
+import DrinkModal from "../components/DrinkModal.vue";
 
 export default {
+  components: {
+    DrinkModal,
+  },
   name: "ConnectedBeverages",
   data: () => ({
-    alcoholic: {
-      a1: null,
-      a2: null,
-      a3: null,
-      a4: null,
-      a5: null,
-      a6: null,
+    alcoholic: [null, null, null, null, null, null],
+    nonAlcoholic: [null, null, null, null],
+    showModal: false,
+    modalInfo: {
+      drinkIndex: 0,
+      isAlcoholic: false,
     },
-    nonAlcoholic: [],
   }),
   methods: {
     async loadDrinks() {
@@ -53,9 +68,27 @@ export default {
         console.log(err.message);
       }
     },
-  }
+    openModal(index, isAlcoholic) {
+      (this.modalInfo.drinkIndex = index),
+        (this.modalInfo.isAlcoholic = isAlcoholic),
+        (this.showModal = true);
+    },
+    onDrinkSelected(drink) {
+      if (this.modalInfo.isAlcoholic) {
+        this.alcoholic[this.modalInfo.drinkIndex] = drink;
+      } else {
+        this.nonAlcoholic[this.modalInfo.drinkIndex] = drink;
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.text{}
 </style>
