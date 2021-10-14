@@ -1,26 +1,6 @@
 <template>
-
- 
-
-
-
-  <li :id="'carousel__slide' + (index+1) "
-        tabindex="0"
-        class="carousel__slide">
-
-<div class="carleft">
-        <a :href="'#carousel__slide' + index"
-           class=""><i class="fa fa-arrow-left" style="color: black; font-size:40px"></i></a>
-            </div>
-            <div class="carright">
-        <a :href="'#carousel__slide' + (index+1)"
-           class=""><i class="fa fa-arrow-right" style="color: black; font-size:40px;"></i></a>
-     
-    </div>
-
-
-
-<div class="card-sc mb-4" style="margin: 0 auto">
+  <li class="glide__slide">
+    <div class="card-sc mb-4">
       <div class="card-header-sc">
         <img :src="'/drink-images/' + imageSrc" alt="rover" />
       </div>
@@ -38,17 +18,17 @@
         </router-link>
       </div>
     </div>
-
-      
-    </li>
+  </li>
 </template>
 <script>
 
-//import { Carousel, Slide } from 'vue-carousel';
+import { Carousel, Slide } from 'vue-carousel';
 export default {
   name: "DrinkCard",
    components: {
-    },
+    Carousel,
+    Slide
+  },
   props: {
     name: {
       type: String,
@@ -66,33 +46,12 @@ export default {
       type: Boolean,
       default: true,
     },
-    index:{
-      type: Number
-    },
-
   },
-  data: () => ({
-
-  })
-
 };
 </script>
 
 
 <style>
-
-.carright{position: absolute;
-right: 50px;
-top: 40%;
-padding: 20px 20px 20px 20px;}
-
-.carleft{position: absolute;
-left: 50px;
-top: 40%;
-padding: 20px 20px 20px 20px;}
-
-.carousel__slide{display: block!important;}
-
 li {
   list-style: none;
 }

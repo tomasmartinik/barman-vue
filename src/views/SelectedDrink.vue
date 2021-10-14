@@ -12,6 +12,8 @@
       :imageSrc="drink.imageSrc"
       :showPrice="false"
     />
+
+
          <div style="width: 50px;"></div>
          <div class="card-sc mb-4" style="width: 70%; height: 100%;position: relative;">
             <div class="card-body-sc pt-4 pb-3 w-100">
