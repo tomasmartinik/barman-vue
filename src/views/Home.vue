@@ -1,9 +1,19 @@
 <template>
 
 
+
+
+ <teleport to="body">
+    <MsgModal
+      v-if="showModal"
+      @close="showModal = false"
+    />
+  </teleport>
+
+ 
 <section class="" aria-label="Gallery">
   <ol class="carousel__viewport">
-<DrinkCard
+<!--<DrinkCard
         v-for="(drink,index) in drinks"
         :key="drink.name"
         :name="drink.name"
@@ -11,12 +21,10 @@
         :price="drink.price"
         :description="drink.description"
         :imageSrc="drink.imageSrc"
-      />
+      /> -->
         </ol>
   
 </section>
-
-
 
 </template>
 
@@ -24,6 +32,8 @@
 // @ is an alias to /src
 import DrinkCard from "@/components/DrinkCard.vue";
 import { globalDrinks } from "@/api/api.js";
+import MsgModal from "../components/MsgModal.vue";
+
 
 //import 'vue3-carousel/dist/carousel.css';
 //import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
@@ -31,17 +41,27 @@ import { globalDrinks } from "@/api/api.js";
 export default {
   name: "Home",
   components: {
-   DrinkCard
+   DrinkCard,
+   MsgModal
   },
   data: () => ({
     drinks: globalDrinks,
-    home: true
+    showModal: false,
+
     
   }),
   props: {
    
   },
   computed: {},
+  methods: {
+  
+    openModal() {
+     
+        (this.showModal = true);
+    },
+   
+  },
 
 };
 </script>

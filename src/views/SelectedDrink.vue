@@ -2,16 +2,9 @@
 
 
  <div class="wrap vertical-center" style="
-         justify-content: left; max-height: 416px; margin-top: 100px;padding-left:50px
+         justify-content: ; max-height: 416px; margin-top: 150px;
          ">
-        <DrinkCard
-      :key="drink.name"
-      :name="drink.name"
-      :price="drink.price"
-      :description="drink.description"
-      :imageSrc="drink.imageSrc"
-      :showPrice="false"
-    />
+       
 
 
          <div style="width: 50px;"></div>

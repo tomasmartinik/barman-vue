@@ -1,23 +1,21 @@
 <template>
 
- 
 
-
-
-  <li :id="'carousel__slide' + (index+1) "
+<li :id="'carousel__slide' + (index+1) "
         tabindex="0"
         class="carousel__slide">
 
 <div class="carleft">
         <a :href="'#carousel__slide' + index"
-           class=""><i class="fa fa-arrow-left" style="color: black; font-size:40px"></i></a>
-            </div>
-            <div class="carright">
-        <a :href="'#carousel__slide' + (index+1)"
-           class=""><i class="fa fa-arrow-right" style="color: black; font-size:40px;"></i></a>
+           class=""><i class="fa fa-arrow-left" style="color: black; font-size:40px"></i>
+         </a>
+</div>
+  <div class="carright">
+        <a :href="'#carousel__slide' + (index+2)"
+           class=""><i class="fa fa-arrow-right" style="color: black; font-size:40px;"></i>
+         </a>
      
     </div>
-
 
 
 <div class="card-sc mb-4" style="margin: 0 auto">
@@ -25,6 +23,10 @@
         <img :src="'/drink-images/' + imageSrc" alt="rover" />
       </div>
       <div class="card-body-sc pt-4 pb-3">
+        
+         <div v-if="index == (drinks?.length - 1)">lorem ipsum</div>
+
+
         <h4>
           {{ name }}
         </h4>
@@ -71,9 +73,11 @@ export default {
     },
 
   },
+  
   data: () => ({
 
-  })
+  }),
+
 
 };
 </script>
@@ -82,14 +86,18 @@ export default {
 <style>
 
 .carright{position: absolute;
-right: 50px;
-top: 40%;
-padding: 20px 20px 20px 20px;}
+right: 0px;
+top: 15%;
+}
 
 .carleft{position: absolute;
-left: 50px;
-top: 40%;
-padding: 20px 20px 20px 20px;}
+left: 0px;
+top: 15%;
+}
+
+.fa-arrow-left,.fa-arrow-right{
+  padding: 100px 100px 100px 100px;
+}
 
 .carousel__slide{display: block!important;}
 
