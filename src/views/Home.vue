@@ -13,15 +13,17 @@
  
 <section class="" aria-label="Gallery">
   <ol class="carousel__viewport">
-<!--<DrinkCard
+<DrinkCard
         v-for="(drink,index) in drinks"
         :key="drink.name"
         :name="drink.name"
         :index="index"
+        :NumberOfDrinks="NumberOfDrinks"
         :price="drink.price"
         :description="drink.description"
         :imageSrc="drink.imageSrc"
-      /> -->
+        :isLast="drinks.length"
+      /> 
         </ol>
   
 </section>
@@ -47,13 +49,17 @@ export default {
   data: () => ({
     drinks: globalDrinks,
     showModal: false,
-
     
   }),
   props: {
+   // NumberOfDrinks: {
+    //  type: Number,
+    //},
    
   },
-  computed: {},
+  computed: {
+   
+  },
   methods: {
   
     openModal() {

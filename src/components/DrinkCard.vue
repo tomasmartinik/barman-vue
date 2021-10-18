@@ -6,12 +6,23 @@
         class="carousel__slide">
 
 <div class="carleft">
-        <a :href="'#carousel__slide' + index"
+
+        <a :href="'#carousel__slide' + index" v-if="index >= 1"
            class=""><i class="fa fa-arrow-left" style="color: black; font-size:40px"></i>
          </a>
+
+         <a :href="'#carousel__slide' + isLast" v-else
+           class=""><i class="fa fa-arrow-left" style="color: black; font-size:40px"></i>
+         </a>
+
+
 </div>
   <div class="carright">
-        <a :href="'#carousel__slide' + (index+2)"
+        <a :href="'#carousel__slide' + (index+2)" v-if="index < (isLast - 1)"
+           class=""><i class="fa fa-arrow-right" style="color: black; font-size:40px;"></i>
+         </a>
+
+         <a :href="'#carousel__slide1'" v-if="index == (isLast - 1)"
            class=""><i class="fa fa-arrow-right" style="color: black; font-size:40px;"></i>
          </a>
      
@@ -23,13 +34,12 @@
         <img :src="'/drink-images/' + imageSrc" alt="rover" />
       </div>
       <div class="card-body-sc pt-4 pb-3">
-        
-         <div v-if="index == (drinks?.length - 1)">lorem ipsum</div>
 
 
         <h4>
           {{ name }}
         </h4>
+      
         <div>
           {{ description }}
         </div>
@@ -71,6 +81,9 @@ export default {
     index:{
       type: Number
     },
+    isLast:{
+      type: Number,
+    }
 
   },
   
@@ -98,6 +111,8 @@ top: 15%;
 .fa-arrow-left,.fa-arrow-right{
   padding: 100px 100px 100px 100px;
 }
+
+
 
 .carousel__slide{display: block!important;}
 
