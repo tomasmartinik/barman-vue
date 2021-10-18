@@ -3,12 +3,6 @@
 
 
 
- <teleport to="body">
-    <MsgModal
-      v-if="showModal"
-      @close="showModal = false"
-    />
-  </teleport>
 
  
 <section class="" aria-label="Gallery">
@@ -34,7 +28,6 @@
 // @ is an alias to /src
 import DrinkCard from "@/components/DrinkCard.vue";
 import { globalDrinks } from "@/api/api.js";
-import MsgModal from "../components/MsgModal.vue";
 
 
 //import 'vue3-carousel/dist/carousel.css';
@@ -44,11 +37,11 @@ export default {
   name: "Home",
   components: {
    DrinkCard,
-   MsgModal
+   
   },
   data: () => ({
     drinks: globalDrinks,
-    showModal: false,
+    
     
   }),
   props: {
@@ -62,10 +55,7 @@ export default {
   },
   methods: {
   
-    openModal() {
-     
-        (this.showModal = true);
-    },
+  
    
   },
 

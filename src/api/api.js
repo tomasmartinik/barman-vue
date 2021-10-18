@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export let globalDrinks = [];
 export let globalIngredients = [];
+export let globalChyba = 'sklenice';
 export let globalSelectedIngredients = ['vodka', 'džus'];
 
 const baseUrl = 'http://localhost:8888/'
@@ -9,6 +10,11 @@ const baseUrl = 'http://localhost:8888/'
 export async function getIngredients() {
 	globalIngredients = await axios.get(baseUrl + 'ingredients');
 	return globalIngredients;
+}
+
+export async function getChyba() {
+	globalChyba = await axios.get(baseUrl + 'chyba');
+	return globalChyba;
 }
 
 export async function getDrinks() {
@@ -30,4 +36,8 @@ export async function selectDrink(name) {
  */
 export async function startCleaning(containers) {
 	await axios.get(baseUrl + 'clean?containers=' + containers.join(','))
+}
+
+export async function ModalAnswer(chyba) {
+	await axios.get(baseUrl + 'odpoved?chyba=' + chyba)
 }

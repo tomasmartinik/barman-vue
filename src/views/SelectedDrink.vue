@@ -30,15 +30,35 @@
       </div>
 
 
+ <teleport to="body">
+    <MsgModal
+      v-if="showModal"
+      @close="showModal = false"
+      :chyba="chyba"
+    />
+  </teleport>
+
+
 </template>
 
 <script>
 import DrinkCard from "../components/DrinkCard.vue";
 import { globalDrinks, selectDrink } from "../api/api";
+import MsgModal from "../components/MsgModal.vue";
+import { globalChyba } from "@/api/api.js";
+
 
 export default {
   name: "SelectedDrink",
+  props:{
+    //chyba:{
+      //type: String,
+      //default: "0",
+    //}
+  },
   data: () => ({
+    chyba: globalChyba,
+    showModal: true,
     drink: {
       name: "loading...",
       price: 0,
@@ -48,6 +68,7 @@ export default {
   }),
   components: {
     DrinkCard,
+    MsgModal
   },
   methods: {
     payDrink() {
@@ -59,6 +80,9 @@ export default {
     console.log("selected drink:", drinkName);
     this.drink = globalDrinks.find((d) => d.name == drinkName);
   },
+    openModal() {
+      (this.showModal = true);
+    },
 };
 </script>
  
