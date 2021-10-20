@@ -144,6 +144,7 @@ ol, li {
   overflow-x: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  text-decoration: none!important;
 }
 
 .carousel__slide {

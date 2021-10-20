@@ -22,9 +22,9 @@
                <div class="mt-3">
                  {{ drink.price }} Kč
                </div>
-               <div class="paydrink-btn" style="position: absolute;bottom: 20px;">
-                  <button @click="payDrink()">ZAPLATIT {{ drink.price }} Kč</button>
-               </div>
+               
+                  <button @click="payDrink()"><div class="paydrink-btn" style="position: absolute;bottom: 20px;">PŘIPRAVIT</div></button>
+               
             </div>
          </div>
       </div>

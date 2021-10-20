@@ -51,7 +51,7 @@
         </div>
         <router-link :to="`/drink/${name}`">
           <div v-if="showPrice" class="choosedrink-btn mt-5">
-            <button>{{ price }} Kč</button>
+            <button>PŘIPRAVIT</button>
           </div>
         </router-link>
       </div>
