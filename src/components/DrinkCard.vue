@@ -8,22 +8,28 @@
 <div class="carleft">
 
         <a :href="'#carousel__slide' + index" v-if="index >= 1"
-           class=""><i class="fa fa-arrow-left" style="color: black; font-size:40px"></i>
+           class="">
+            <img src="/icons/arrow-left.png" style="height:50px;">
          </a>
 
          <a :href="'#carousel__slide' + isLast" v-else
-           class=""><i class="fa fa-arrow-left" style="color: black; font-size:40px"></i>
+           class="">
+            <img src="/icons/arrow-left.png" style="height:50px">
          </a>
 
 
 </div>
   <div class="carright">
         <a :href="'#carousel__slide' + (index+2)" v-if="index < (isLast - 1)"
-           class=""><i class="fa fa-arrow-right" style="color: black; font-size:40px;"></i>
+           class="">
+            <img src="/icons/arrow-right.png" style="height:50px;">
+
          </a>
 
          <a :href="'#carousel__slide1'" v-if="index == (isLast - 1)"
-           class=""><i class="fa fa-arrow-right" style="color: black; font-size:40px;"></i>
+           class="">
+            <img src="/icons/arrow-right.png" style="height:50px;">
+
          </a>
      
     </div>
@@ -99,13 +105,13 @@ export default {
 <style>
 
 .carright{position: absolute;
-right: 0px;
-top: 15%;
+right: 70px;
+top: 30%;
 }
 
 .carleft{position: absolute;
-left: 0px;
-top: 15%;
+left: 70px;
+top: 30%;
 }
 
 .fa-arrow-left,.fa-arrow-right{

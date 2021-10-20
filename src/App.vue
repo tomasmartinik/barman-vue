@@ -4,7 +4,7 @@
     style="background: black; padding-left: 20px"
   >
     <button @click="expandMenu()" class="navbar-brand" href="#">
-      <i id="hamburger" class="fa fa-bars" style="color: white"></i>
+            <img src="/icons/menu_wh.png" style="height:35px;">
     </button>
     <button
       class="navbar-toggler"

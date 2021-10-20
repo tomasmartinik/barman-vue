@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h2 class="text-center mt-4 mb-3">Alkoholické</h2>
+      <h2 class="text-center mt-4 mb-5">Alkoholické</h2>
       <ul>
         <div class="wrap">
       <div class="row">
@@ -15,7 +15,7 @@
       </ul>
     </div>
     <div>
-      <h2 class="text-center mt-5 mb-3">Nealkoholické</h2>
+      <h2 class="text-center mt-5 mb-5">Nealkoholické</h2>
       <ul>
         <div class="wrap">
         <div class="row">
@@ -30,6 +30,9 @@
 <div class="w-100 text-center">  
   <button @click="loadDrinks" class="btn-secondary p-4 mt-2">Načti drinky</button>
 </div>
+  <router-link to="/">
+
+</router-link>
 
   <teleport to="body">
     <drink-modal
@@ -91,4 +94,8 @@ export default {
 }
 
 .text{}
+
+.kanystr{height: 200px;
+background: grey;  }
+
 </style>

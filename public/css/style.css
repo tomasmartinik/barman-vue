@@ -16,8 +16,6 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 
-.kanystr{height: 250px;
-background: grey;  }
 
 .kanystr:hover{background: black!important}
 

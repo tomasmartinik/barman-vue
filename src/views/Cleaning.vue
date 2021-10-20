@@ -39,10 +39,13 @@
         </div>
       </div>
 
-      <div class="choose-btn mt-5">
-        <button @click="cleanContainers()">Spustit čištění</button>
-      </div>
     </div>
+
+    
+
+  </div>
+  <div class="text-center">
+      <button @click="cleanContainers()" class="btn-secondary p-4 mt-5" style="">Spustit čištění</button>
   </div>
 </template>
 
@@ -113,7 +116,7 @@ input[type="reset"] {
   background: #c0c0c0;
   color: white !important;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 20px;
   padding: 13px 8px 13px 8px;
   border: none;
   text-align: center;

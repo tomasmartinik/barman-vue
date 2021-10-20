@@ -10,7 +10,9 @@
 
       <router-link class="nav-item nav-link active p-4" to="/cleaning">Čištění</router-link>
       <router-link class="nav-item nav-link active p-4" to="/connectedBeverages">Nastavení</router-link>
-      <button class="mt-5"><i class="fa fa-close" style="color: white; font-size:40px"></i></button>
+      <button class="mt-5">
+            <img src="/icons/close_wh.png" style="height:40px;margin:0 auto">
+      </button>
     </div>
   </transition>
 </template>
