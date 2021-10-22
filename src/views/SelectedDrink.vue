@@ -73,6 +73,7 @@ export default {
   methods: {
     payDrink() {
       selectDrink(this.drink.name);
+      this.$router.push('/')
     },
   },
   created() {
