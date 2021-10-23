@@ -8,30 +8,30 @@
     <div class="wrap mt-5 pt-5" style="">
       <div class="container mt-5">
         <div class="row pb-3">
-          <div
+          <div 
             class="col kanystr mx-3"
-            @click="cleanA = !cleanA"
+            @click="chooseContainer('A')"
             :class="{ selected: cleanA }"
           >
             <div class="text-center mt-5 pt-4 letterKanystr">A</div>
           </div>
-          <div
+          <div 
             class="col kanystr mx-3"
-            @click="cleanB = !cleanB"
+            @click="chooseContainer('B')"
             :class="{ selected: cleanB }"
           >
             <div class="text-center mt-5 pt-4 letterKanystr">B</div>
           </div>
-          <div
+          <div 
             class="col kanystr mx-3"
-            @click="cleanC = !cleanC"
+            @click="chooseContainer('C')"
             :class="{ selected: cleanC }"
           >
             <div class="text-center mt-5 pt-4 letterKanystr">C</div>
           </div>
-          <div
+          <div 
             class="col kanystr mx-3"
-            @click="cleanD = !cleanD"
+            @click="chooseContainer('D')"
             :class="{ selected: cleanD }"
           >
             <div class="text-center mt-5 pt-4 letterKanystr">D</div>
@@ -44,9 +44,11 @@
     
 
   </div>
+  <!--
   <div class="text-center">
-      <button @click="cleanContainers()" class="btn-secondary p-4 mt-5" style="">Spustit čištění</button>
+      <button @click="cleanContainer()" class="btn-secondary p-4 mt-5" style="">Spustit čištění</button>
   </div>
+-->
 </template>
 
 <script>
@@ -63,20 +65,49 @@ export default {
     cleanD: false,
   }),
   methods: {
-    cleanContainers() {
-      const cleanArray = [];
-      if (this.cleanA) cleanArray.push("A");
-      if (this.cleanB) cleanArray.push("B");
-      if (this.cleanC) cleanArray.push("C");
-      if (this.cleanD) cleanArray.push("D");
-      startCleaning(cleanArray);
-      this.cleanA = false;
-      this.cleanB = false;
-      this.cleanC = false;
-      this.cleanD = false;
-    },
-  },
-};
+
+
+    chooseContainer(kanystr) {
+    const cleanArray = [];
+
+      if (kanystr == "A") {
+         cleanArray.push("A");
+        this.cleanB = false;
+        this.cleanC = false;
+        this.cleanD = false;
+        startCleaning(cleanArray);
+
+      }
+      if (kanystr == "B") {
+         cleanArray.push("B");
+        this.cleanA = false;
+        this.cleanC = false;
+        this.cleanD = false;
+        startCleaning(cleanArray);
+
+      }
+      if (kanystr == "C") {
+         cleanArray.push("C");
+        this.cleanA = false;
+        this.cleanB = false;
+        this.cleanD = false;
+        startCleaning(cleanArray);
+
+      }
+      if (kanystr == "D") {
+         cleanArray.push("D");
+        this.cleanA = false;
+        this.cleanC = false;
+        this.cleanB = false;
+        startCleaning(cleanArray);
+
+      }
+
+    
+
+  }
+}
+}
 </script>
 
 <style>
