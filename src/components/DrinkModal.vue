@@ -38,7 +38,7 @@
 
 <script>
 import { alcoholicDrinks, nonAlcoholicDrinks } from "../data/drink-lists";
-import {  selectIngredient } from "../api/api";
+import {  selectIngredient, globalSelectedIngredients } from "../api/api";
 
 export default {
   name: "DrinkModal",
@@ -71,6 +71,7 @@ export default {
       this.$emit("drinkSelected", drink, index);
       this.$emit("close");
       selectIngredient(drink, index);
+      globalSelectedIngredients.push(drink);
     },
   },
 };
