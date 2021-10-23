@@ -29,6 +29,10 @@ export async function selectDrink(name) {
 	await axios.get(baseUrl + 'drink?name=' + name);
 }
 
+export async function selectIngredient(name, index) {
+	await axios.get(baseUrl + 'ingredient?name=' + index + ':' + name);
+}
+
 /**
  * 
  * @param {Array<string>} containers containers that will be cleaned

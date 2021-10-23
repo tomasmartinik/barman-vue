@@ -1,4 +1,4 @@
-<template>
+j<template>
   <div>
     <div>
       <h2 class="text-center mt-4 mb-5">Alkoholické</h2>
@@ -7,7 +7,7 @@
       <div class="row">
         <button @click="openModal(i, true)" v-for="(drink, i) in alcoholic" :key="drink" class="col kanystr mx-3 text-center letterChoose">
           
-            {{ drink ?? "Select..." }}  alko {{ i }}
+            {{ drink ?? "Vybrat " }}  alko {{ i + 1}}
           
         </button>
       </div>
@@ -20,7 +20,7 @@
         <div class="wrap">
         <div class="row">
           <button @click="openModal(i, false)" v-for="(drink, i) in nonAlcoholic" :key="drink" class="col kanystr mx-3 text-center letterChoose">
-            {{ drink ?? "Select..." }}  nealko {{ i }}
+            {{ drink ?? "Vybrat " }}  nealko {{ i + 7}}
           </button>
       </div>
       </div>

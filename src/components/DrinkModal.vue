@@ -15,7 +15,7 @@
         <div class="my-2 text-alc" 
           v-for="drink in filteredAlcoholicDrinks"
           :key="drink"
-          @click="emitDrinkSelected(drink)"
+          @click="emitDrinkSelected(drink, info.drinkIndex + 1)"
         >
           {{ drink }}
         </div>
@@ -24,7 +24,7 @@
         <div class="my-2 text-alc" 
           v-for="drink in filteredNonAlcoholicDrinks"
           :key="drink"
-          @click="emitDrinkSelected(drink)"
+          @click="emitDrinkSelected(drink, info.drinkIndex + 7)"
         >
           {{ drink }}
         </div>
@@ -38,6 +38,7 @@
 
 <script>
 import { alcoholicDrinks, nonAlcoholicDrinks } from "../data/drink-lists";
+import {  selectIngredient } from "../api/api";
 
 export default {
   name: "DrinkModal",
@@ -66,9 +67,10 @@ export default {
     },
   },
   methods: {
-    emitDrinkSelected(drink) {
-      this.$emit("drinkSelected", drink);
+    emitDrinkSelected(drink, index) {
+      this.$emit("drinkSelected", drink, index);
       this.$emit("close");
+      selectIngredient(drink, index);
     },
   },
 };
