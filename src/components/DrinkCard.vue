@@ -37,7 +37,7 @@
 
 <div class="card-sc mb-4" style="margin: 0 auto">
       <div class="card-header-sc">
-        <img :src="'/drink-images/' + imageSrc" alt="rover" />
+        <img :src="'/drink-images/' + imageSrc +'.jpg'" alt="rover" />
       </div>
       <div class="card-body-sc pt-4 pb-3">
 
