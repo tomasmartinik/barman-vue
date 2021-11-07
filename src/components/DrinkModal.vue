@@ -1,7 +1,10 @@
 <template>
   <div v-if="show" class="barmanmodal">
     <div class="barmaninner-modal">
-            <button @click="$emit('close')"><i class="fa fa-close px-3 py-3" style="color: black; font-size:40px"></i></button>
+            <button @click="$emit('close')"><button class="m-3">
+            <img src="/icons/close.png" style="height:30px;margin:0 auto">
+      </button>
+    </button>
 
       <div style="width:90%; margin:0 auto">
 
