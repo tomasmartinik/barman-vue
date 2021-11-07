@@ -21,20 +21,19 @@ export async function getChyba() {
 
 export async function getDrinks() {
 	const response = await axios.get(
-		baseUrl + 'drinks?ingredients=' + globalSelectedIngredients.join(',')
+		baseUrl + 'cocktail/' + globalSelectedIngredients.join(',')
 	);
-	globalDrinks = response.data;
+	globalDrinks = response.data["Available cocktails"];
+	console.log(globalDrinks);
 	return globalDrinks;
 }
 
 export async function selectDrink(name) {
-	await axios.get(baseUrl + 'drink?name=' + name);
+	await axios.get(baseUrl + 'drink/name=' + name);
 }
 
 export async function selectIngredient(name, index) {
-	await axios.get(baseUrl + 'ingredient?name=' + index + ':' + name);
-	this.globalSelectedIngredients.pop('dddd');
-
+	await axios.get(baseUrl + 'ingredient/name=' + index + ':' + name);
 }
 
 /**

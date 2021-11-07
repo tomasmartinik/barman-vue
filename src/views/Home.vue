@@ -12,10 +12,11 @@
         :key="drink.name"
         :name="drink.name"
         :index="index"
+        :price="50"
         :NumberOfDrinks="NumberOfDrinks"
-        :price="drink.price"
         :description="drink.description"
-        :imageSrc="drink.imageSrc"
+        :showPrice="true"
+        :imageSrc="drink.name"
         :isLast="drinks.length"
       /> 
         </ol>
