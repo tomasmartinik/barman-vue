@@ -13,6 +13,8 @@ export async function getIngredients() {
 }
 
 
+//.data["alco ingredients"]
+
 export async function getChyba() {
 	globalChyba = await axios.get(baseUrl + 'chyba');
 	return globalChyba;
