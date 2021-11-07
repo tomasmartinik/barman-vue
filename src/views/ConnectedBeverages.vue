@@ -20,7 +20,7 @@ j<template>
         <div class="wrap">
         <div class="row">
           <button @click="openModal(i, false)" v-for="(drink, i) in nonAlcoholic" :key="drink" class="col kanystr mx-3 text-center letterChoose">
-            {{ drink ?? "Vybrat " }}  nealko {{ i + 7}}
+            {{ drink ?? "Vybrat " }}  nealko {{ 2*i + 45}}
           </button>
       </div>
       </div>
