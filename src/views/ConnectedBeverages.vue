@@ -20,7 +20,7 @@ j<template>
         <div class="wrap">
         <div class="row">
           <button @click="openModal(i, false)" v-for="(drink, i) in nonAlcoholic" :key="drink" class="col kanystr mx-3 text-center letterChoose">
-            {{ drink ?? "Vybrat " }}  nealko {{ 2*i + 45}}
+            {{ drink ?? "Vybrat " }}  nealko {{nonAlcIndex[i]}}
           </button>
       </div>
       </div>
@@ -56,6 +56,7 @@ export default {
   data: () => ({
     alcoholic: [null, null, null, null, null, null],
     nonAlcoholic: [null, null, null, null],
+    nonAlcIndex: ["A", "B", "C", "D"],
     showModal: false,
     modalInfo: {
       drinkIndex: 0,

@@ -33,7 +33,10 @@ export async function selectDrink(name) {
 }
 
 export async function selectIngredient(name, index) {
-	await axios.get(baseUrl + 'ingredient/name=' + index + ':' + name);
+	if (index < 7) {await axios.get(baseUrl + 'ingredient/name=' + index + ':' + name);
+} else {
+	await axios.get(baseUrl + 'ingredient/name=' + ((2*index)+31) + ':' + name);
+}
 }
 
 /**
