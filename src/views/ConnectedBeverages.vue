@@ -1,4 +1,4 @@
-j<template>
+<template>
   <div>
     <div>
       <h2 class="text-center mt-4 mb-5">Alkoholické</h2>
