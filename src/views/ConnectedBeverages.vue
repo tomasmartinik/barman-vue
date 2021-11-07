@@ -70,6 +70,7 @@ export default {
         alert("Nedokázal jsem se připojit, koukni do konzole");
         console.log(err.message);
       }
+      this.$router.push('/')
     },
     openModal(index, isAlcoholic) {
       (this.modalInfo.drinkIndex = index),
