@@ -19,7 +19,8 @@
       <ul>
         <div class="wrap">
         <div class="row">
-          <button @click="openModal(i, false)" v-for="(drink, i) in nonAlcoholic" :key="drink" class="col kanystr mx-3 text-center letterChoose">
+          <button @click="openModal(i, false)" v-for="(drink, i) in nonAlcoholic" :key="drink" class="col kanystr mx-3 text-center letterChoose"> 
+            <!-- <input v-model="name"> -->
             {{ drink ?? "Vybrat " }}  nealko {{nonAlcIndex[i]}}
           </button>
       </div>
@@ -62,7 +63,12 @@ export default {
       drinkIndex: 0,
       isAlcoholic: false,
     },
+  //  cats:[null, null, null, null, null, null, null, null, null, null],
   }),
+  //mounted() {
+  // if(localStorage.name) this.name = localStorage.name;
+  //},
+
   methods: {
     async loadDrinks() {
       try {
@@ -81,10 +87,17 @@ export default {
     onDrinkSelected(drink) {
       if (this.modalInfo.isAlcoholic) {
         this.alcoholic[this.modalInfo.drinkIndex] = drink;
+         //this.saveLocalStorage();
       } else {
         this.nonAlcoholic[this.modalInfo.drinkIndex] = drink;
+         //this.saveLocalStorage(drink, this.modalInfo.drinkIndex);
       }
     },
+   // saveLocalStorage(drink,index) {
+   //   let parsed = JSON.stringify(drink, index);
+   //   insertAt(cats, index, drink);
+   //   setItem('cats', parsed);
+   // }
   },
 };
 </script>
