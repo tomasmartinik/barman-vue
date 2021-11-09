@@ -85,7 +85,8 @@ export default {
       this.$emit("drinkSelected", drink, index);
       this.$emit("close");
       selectIngredient(drink, index);
-      globalSelectedIngredients.push(drink);
+     // globalSelectedIngredients.push(drink);
+    globalSelectedIngredients.splice(index, 0, drink);
     },
   },
 };
