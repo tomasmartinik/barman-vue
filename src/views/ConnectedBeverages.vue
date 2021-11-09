@@ -55,8 +55,7 @@ export default {
   },
   name: "ConnectedBeverages",
   data: () => ({
-    alcoholic: [null, null, null, null, null, null],
-    nonAlcoholic: [null, null, null, null],
+    
     nonAlcIndex: ["A", "B", "C", "D"],
     showModal: false,
     modalInfo: {
@@ -68,7 +67,14 @@ export default {
   //mounted() {
   // if(localStorage.name) this.name = localStorage.name;
   //},
-
+computed: {
+  alcoholic(){
+    return this.$store.state.alcoholic;
+  },
+  nonAlcoholic(){
+    return this.$store.state.nonAlcoholic;
+  } 
+},
   methods: {
     async loadDrinks() {
       try {
@@ -86,10 +92,16 @@ export default {
     },
     onDrinkSelected(drink) {
       if (this.modalInfo.isAlcoholic) {
-        this.alcoholic[this.modalInfo.drinkIndex] = drink;
+        this.$store.commit("setAlcoholic", {drinkIndex:this.modalInfo.drinkIndex,
+          drink: drink,
+        })
+       // this.alcoholic[this.modalInfo.drinkIndex] = drink;
          //this.saveLocalStorage();
       } else {
-        this.nonAlcoholic[this.modalInfo.drinkIndex] = drink;
+        this.$store.commit("setNonAlcoholic", {drinkIndex:this.modalInfo.drinkIndex,
+          drink: drink,
+        })
+       // this.nonAlcoholic[this.modalInfo.drinkIndex] = drink;
          //this.saveLocalStorage(drink, this.modalInfo.drinkIndex);
       }
     },
