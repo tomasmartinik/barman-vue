@@ -1,8 +1,8 @@
 import { createStore } from 'vuex'
-import { VuexPersistence} from 'vuex-persist'
-const vuexLocal = new VuexPersistence({
-  storage: window.localStorage
-})
+//import { VuexPersistence} from 'vuex-persist'
+//const vuexLocal = new VuexPersistence({
+//  storage: window.localStorage
+//})
 
 export default createStore({
   state: {
@@ -21,5 +21,5 @@ export default createStore({
   },
   modules: {
   },
-  plugins: [vuexLocal.plugin]
+  //plugins: [vuexLocal.plugin]
 })
