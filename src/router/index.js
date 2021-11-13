@@ -10,8 +10,8 @@ import ConnectedBeverages from '../views/ConnectedBeverages.vue'
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'ConnectedBeverages',
+    component: ConnectedBeverages
   },
   {
     path: '/drink/:name',
@@ -29,9 +29,9 @@ const routes = [
     component: Cleaning
   },
   {
-    path: '/connectedBeverages',
-    name: 'ConnectedBeverages',
-    component: ConnectedBeverages
+    path: '/home',
+    name: 'Home',
+    component: Home
   }
 ]
 

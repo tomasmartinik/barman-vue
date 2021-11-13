@@ -83,7 +83,7 @@ computed: {
         alert("Nedokázal jsem se připojit, koukni do konzole");
         console.log(err.message);
       }
-      this.$router.push('/')
+      this.$router.push('/home')
     },
     openModal(index, isAlcoholic) {
       (this.modalInfo.drinkIndex = index),
