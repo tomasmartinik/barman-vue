@@ -46,10 +46,10 @@ export async function selectIngredient(name, index) {
  * @param {Array<string>} containers containers that will be cleaned
  * @example startCleaning(['A', 'B']) 
  */
-export async function startCleaning(containers) {
-	await axios.get(baseUrl + 'clean?containers=' + containers.join(','))
+ export async function startCleaning(containers) {
+	await axios.get(baseUrl + 'hardware/clean=' + containers.join(','))
 }
 
 export async function ModalAnswer(chyba) {
-	await axios.get(baseUrl + 'odpoved?chyba=' + chyba)
+	await axios.get(baseUrl + 'hardware/post_response=' + chyba)
 }
