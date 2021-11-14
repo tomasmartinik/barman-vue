@@ -5,11 +5,11 @@
 
   <transition name="slide-fade">
     <div v-if="isOpen" id="nav">
-      <router-link class="nav-item nav-link active p-4 mt-5" to="/">Home</router-link>
+      <router-link class="nav-item nav-link active p-4 mt-5" to="/home">Home</router-link>
        <!-- <button @click="loadDrinks" class="btn-primary p-2" style="margin:0 auto">Načti drinky</button>-->
 
       <router-link class="nav-item nav-link active p-4" to="/cleaning">Čištění</router-link>
-      <router-link class="nav-item nav-link active p-4" to="/connectedBeverages">Nastavení</router-link>
+      <router-link class="nav-item nav-link active p-4" to="/">Nastavení</router-link>
       <button class="mt-5">
             <img src="/icons/close_wh.png" style="height:40px;margin:0 auto">
       </button>
