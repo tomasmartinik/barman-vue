@@ -46,7 +46,7 @@
           {{ name }}
         </h4>
       
-        <div style="font-size:17px">
+        <div style="font-size:15px">
           {{ description }}
         </div>
         <router-link :to="`/drink/${name}`">
