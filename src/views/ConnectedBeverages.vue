@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h2 class="text-center mt-4 mb-5">Alkoholické</h2>
+      <h2 class="text-center mt-4 mb-3">Alkoholické</h2>
       <ul>
         <div class="wrap">
       <div class="row">
@@ -15,7 +15,7 @@
       </ul>
     </div>
     <div>
-      <h2 class="text-center mt-5 mb-5">Nealkoholické</h2>
+      <h2 class="text-center mt-5 mb-3">Nealkoholické</h2>
       <ul>
         <div class="wrap">
         <div class="row">

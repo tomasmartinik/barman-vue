@@ -9,12 +9,12 @@
 
         <a :href="'#carousel__slide' + index" v-if="index >= 1"
            class="">
-            <img src="/icons/arrow-left.png" style="height:50px;">
+            <img src="/icons/arrow-left.png" style="height:90px;">
          </a>
 
          <a :href="'#carousel__slide' + isLast" v-else
            class="">
-            <img src="/icons/arrow-left.png" style="height:50px">
+            <img src="/icons/arrow-left.png" style="height:90px">
          </a>
 
 
@@ -22,20 +22,20 @@
   <div class="carright">
         <a :href="'#carousel__slide' + (index+2)" v-if="index < (isLast - 1)"
            class="">
-            <img src="/icons/arrow-right.png" style="height:50px;">
+            <img src="/icons/arrow-right.png" style="height:90px;">
 
          </a>
 
          <a :href="'#carousel__slide1'" v-if="index == (isLast - 1)"
            class="">
-            <img src="/icons/arrow-right.png" style="height:50px;">
+            <img src="/icons/arrow-right.png" style="height:90px;">
 
          </a>
      
     </div>
 
 
-<div class="card-sc mb-4" style="margin: 0 auto">
+<div class="card-sc mb-4" style="margin: 0 auto; transform:scale(1.15)">
       <div class="card-header-sc">
         <img :src="'/drink-images/' + imageSrc +'.jpg'" alt="rover" />
       </div>
