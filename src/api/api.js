@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export let globalDrinks = [];
 export let globalIngredients = [];
-export let globalChyba = 'sklenice';
+export let globalChyba = '';
 export let globalSelectedIngredients = ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none"];
 
 const baseUrl = 'http://localhost:8888/'
