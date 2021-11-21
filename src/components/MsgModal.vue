@@ -1,5 +1,5 @@
 <template>
-<div style="background-color: rgba(0,0,0,0.5);; height:100%; width:100%; position:absolute; left:0;top:0">
+<div v-if="chyba != 'none'" style="background-color: rgba(0,0,0,0.5);; height:100%; width:100%; position:absolute; left:0;top:0">
 <div class="mt-5" style="position:absolute;left:30%; top:20%;" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
