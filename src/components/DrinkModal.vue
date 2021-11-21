@@ -12,7 +12,7 @@
         Vyberte {{ info.isAlcoholic ? "alko" : "nealko" }} drink na pozici
         {{ info.drinkIndex }}
       </h3>
-      <input type="text" placeholder="Vyhledat..." v-model="search" class="w-100 mb-3" />
+      <input type="text" placeholder="Vyhledat..." v-model="search" class="w-100 mb-3 p-3" />
       <br />
       <div v-if="info.isAlcoholic">
         <!--
@@ -24,7 +24,7 @@
           {{ drink }}
         </div> -->
 
-<div class="my-2 text-alc" 
+<div class="my-3 text-alc" 
           v-for="drink in filteredAlcoholicDrinks"
           :key="drink"
           @click="emitDrinkSelected(drink, info.drinkIndex + 1)"
@@ -113,5 +113,5 @@ export default {
   overflow: scroll;
 }
 
-.text-alc{font-size: 20px;}
+.text-alc{font-size: 27px;}
 </style>
