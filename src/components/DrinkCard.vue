@@ -35,7 +35,7 @@
     </div>
 
 
-<div class="card-sc mb-4" style="margin: 0 auto; transform:scale(1.3)">
+<div class="card-sc mb-4" style="margin: 0 auto; transform:scale(1.23)">
       <div class="card-header-sc">
         <img :src="'/drink-images/' + imageSrc +'.jpg'" alt="rover" />
       </div>
@@ -46,7 +46,7 @@
           {{ name }}
         </h4>
       
-        <div style="font-size:20px">
+        <div style="font-size:17px">
           {{ description }}
         </div>
         <router-link :to="`/drink/${name}`">
